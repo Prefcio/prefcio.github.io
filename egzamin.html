@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>egzamin</title>
+</head>
+
+<body>
+    <script>
+
+        let a = prompt('Podaj pierwszą liczbę:');
+        let arytm = prompt('Podaj operator działania +,-,*,/,%');
+        b = prompt('Podaj kolejną liczbę');
+        let result = 0;
+        function add(a, b) { return Number(a) + Number(b); }
+        function minus(a, b) { return Number(a) - Number(b); }
+        function multiple(a, b) { return Number(a) * Number(b); }
+        function divide(a, b) {
+            if (b == 0) { alert('NIE DZIEL PRZEZ 0'); } else { return Number(a) / Number(b); }
+        }
+        function modulo(a, b) { return Number(a) % Number(b); }
+        function stop() { return 0; }
+
+        function calc(a, arytm, b) {
+            switch (arytm) {
+                case "+":
+                    return add(a, b);
+                case "-":
+                    return minus(a, b);
+                case "*":
+                    return multiple(a, b);
+                case "/":
+                    if (b != 0) {
+                        return divide(a, b)
+                    }
+                case "%":
+                    return modulo(a, b)
+            }
+        }
+
+        result = calc(a, arytm, b);
+        alert(result);
+        nextloop = true;
+        while (nextloop == true) {
+            let nextarytm = prompt('Podaj nastepny operator lub zakończ');
+            if (nextarytm != '') {
+                let bb = prompt('podaj nastepna liczbe');
+                result = calc(result, nextarytm, bb);
+                alert(result);
+            } else {
+                break;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
