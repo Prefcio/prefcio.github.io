@@ -68,7 +68,9 @@
             if (nextarytm != '') {
                 let bb = prompt('podaj nastepna liczbe');
                 result = calc(result, nextarytm, bb);
-                alert(result);
+                  if (result !== 0) {
+            alert(result);
+        }
             } else {
                 break;
             }
