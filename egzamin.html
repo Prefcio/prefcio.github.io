@@ -10,7 +10,7 @@
 
 <body>
     <script>
- let a = prompt('Podaj pierwszą liczbę:');
+        let a = prompt('Podaj pierwszą liczbę:');
         let arytm = prompt('Podaj operator działania +,-,*,/,%');
         b = prompt('Podaj kolejną liczbę');
         let result = 0;
@@ -30,7 +30,7 @@
         function divide(a, b) {
             if (b == 0) {
                 alert('Nie dziel przez 0');
-                return 0;
+                return a;
             } else {
                 return Number(a) / Number(b);
             }
@@ -57,7 +57,7 @@
 
         result = calc(a, arytm, b);
 
-        if (result !== 0) {
+        if (result !== a) {
             alert(result);
         }
 
@@ -68,16 +68,12 @@
             if (nextarytm != '') {
                 let bb = prompt('podaj nastepna liczbe');
                 result = calc(result, nextarytm, bb);
-                  if (result !== 0) {
-            alert(result);
-        }
+                if (result !== 0) {
+                    alert(result);
+                }
             } else {
                 break;
             }
 
         }
 
-    </script>
-</body>
-
-</html>
