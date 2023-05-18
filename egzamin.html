@@ -10,19 +10,35 @@
 
 <body>
     <script>
-
-        let a = prompt('Podaj pierwszą liczbę:');
+ let a = prompt('Podaj pierwszą liczbę:');
         let arytm = prompt('Podaj operator działania +,-,*,/,%');
         b = prompt('Podaj kolejną liczbę');
         let result = 0;
-        function add(a, b) { return Number(a) + Number(b); }
-        function minus(a, b) { return Number(a) - Number(b); }
-        function multiple(a, b) { return Number(a) * Number(b); }
-        function divide(a, b) {
-            if (b == 0) { alert('NIE DZIEL PRZEZ 0'); } else { return Number(a) / Number(b); }
+
+        function add(a, b) {
+            return Number(a) + Number(b);
         }
-        function modulo(a, b) { return Number(a) % Number(b); }
-        function stop() { return 0; }
+
+        function minus(a, b) {
+            return Number(a) - Number(b);
+        }
+
+        function multiple(a, b) {
+            return Number(a) * Number(b);
+        }
+
+        function divide(a, b) {
+            if (b == 0) {
+                alert('Nie dziel przez 0');
+                return 0;
+            } else {
+                return Number(a) / Number(b);
+            }
+        }
+
+        function modulo(a, b) {
+            return Number(a) % Number(b);
+        }
 
         function calc(a, arytm, b) {
             switch (arytm) {
@@ -33,16 +49,19 @@
                 case "*":
                     return multiple(a, b);
                 case "/":
-                    if (b != 0) {
-                        return divide(a, b)
-                    }
+                    return divide(a, b);
                 case "%":
-                    return modulo(a, b)
+                    return modulo(a, b);
             }
         }
 
         result = calc(a, arytm, b);
-        alert(result);
+
+        if (result !== 0) {
+            alert(result);
+        }
+
+
         nextloop = true;
         while (nextloop == true) {
             let nextarytm = prompt('Podaj nastepny operator lub zakończ');
