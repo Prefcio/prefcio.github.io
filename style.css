@@ -1,0 +1,71 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.container {
+	display:grid;
+	grid-template-columns: max-content max-content max-content;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 10px 35px;
+}
+	
+}
+body{
+	height: 100vh;
+}
+
+
+.btn{
+	  counter-increment: i;
+	    font-size: 2rem;
+border-radius: 10px;
+padding: 10px 10px 10px 10px;
+  box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+}
+.row-1::before {
+    content: counter(i) ". ";
+}
+
+
+.row-2::before {
+        content: counter(i, upper-roman) ") ";
+}
+
+
+.row-3::before {
+        content: "[" counter(i, decimal-leading-zero) "] ";
+}
+
+
+button:nth-of-type(4){
+background-color: orange;
+}	
+
+
+button:nth-of-type(9){
+background-color: green;
+color: white;
+}	
+
+.btn:hover{
+	color: white;
+	
+}
+
+button:nth-of-type(4):hover{
+background-color: green;
+color: yellow;
+}	
+button:nth-of-type(9):hover{
+background-color: blue;
+color: black;
+}	
+
+button:active{
+	
+box-shadow: -0px 0px 0px 0px rgba(66, 68, 90, 1);}
